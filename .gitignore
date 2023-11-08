@@ -43,3 +43,5 @@ dags/unittests.cfg
 build/
 dist/
 mlruns/
+
+.ipynb_checkpoints/
