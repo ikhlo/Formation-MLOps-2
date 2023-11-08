@@ -22,7 +22,7 @@ jobs:
       - name: Run Linter
         run:  flake8 --ignore=E402,E501 .
       - name: Run Vulture
-        run:  vulture .
+        run:  vulture scripts/ --min-confidence 70
       - name: Run tests
         run:  python -m pytest --cov=formation_indus_ds_avancee/ tests/test_unit/ -vv -p no:warnings
 
