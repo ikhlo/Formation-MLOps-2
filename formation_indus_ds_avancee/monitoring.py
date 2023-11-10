@@ -1,5 +1,5 @@
 import os
-
+import time
 import pandas as pd
 from sqlalchemy import create_engine
 
@@ -21,6 +21,9 @@ def monitor_with_io(predictions_folder: str, db_con_str: str, monitoring_table_n
 
 def monitor(latest_predictions: pd.DataFrame) -> pd.DataFrame:
     # Start filling function
-    monitoring_df = pd.DataFrame
+    monitoring_df = pd.DataFrame({
+        "predictions_time": latest_predictions["predictions_time"].iloc[-1],
+        "avg_predictions": latest_predictions["predictions"].mean()
+    }, index=[0])
     # End filling function
     return monitoring_df
