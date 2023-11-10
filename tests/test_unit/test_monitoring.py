@@ -2,14 +2,12 @@ import os
 from unittest.mock import patch
 from datetime import datetime
 import pandas as pd
-from pytest import mark
 from sqlalchemy import create_engine
 
 from dags.config import MONITORING_TABLE_NAME
 from formation_indus_ds_avancee.monitoring import monitor_with_io
 
 
-#@mark.skip("Complete monitor function and test, then remove the mark.skip")
 @patch('pandas.read_csv')
 def test_monitor_with_io_should_write_predictions_mean_to_db(mocked_read_csv):
     # Given
